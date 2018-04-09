@@ -122,10 +122,10 @@ func main() {
 	password := cfg.Section("DataMQTTBroker").Key("password").String()
 
 	connOpts := MQTT.NewClientOptions().AddBroker(server).SetClientID(clientid).SetCleanSession(true)
-	if *username != "" {
-	      connOpts.SetUsername(*username)
-	      if *password != "" {
-	              connOpts.SetPassword(*password)
+	if username != "" {
+	      connOpts.SetUsername(username)
+	      if password != "" {
+	              connOpts.SetPassword(password)
 	      }
 	}
 	tlsConfig := &tls.Config{InsecureSkipVerify: true, ClientAuth: tls.NoClientCert}
