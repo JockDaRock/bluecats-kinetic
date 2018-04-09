@@ -1,0 +1,23 @@
+descriptor-schema-version: "2.2"
+
+info:
+  name: yourname_kinetic_location
+  description: "Golang Location Services App for Kinetic"
+  version: "1.00"
+  author-link: "http://developer.cisco.com"
+  author-name: "Jock Reed"
+
+app:
+
+  cpuarch: "x86_64"
+  type: docker
+  resources:
+    profile: c1.small
+    network:
+      -
+        interface-name: eth0
+
+  # Specify runtime and startup
+  startup:
+    rootfs: rootfs.tar
+    target: ["/location-kinetic"]
